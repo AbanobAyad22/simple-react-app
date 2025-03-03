@@ -14,7 +14,5 @@ jobs:
           node-version: 18  
       - name: install dependencies
         run: npm ci
-      - name: fix dependencies
-        run: npm audit fix --force   
       - name: run test
         run: npm test       
