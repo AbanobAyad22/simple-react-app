@@ -36,4 +36,8 @@ jobs:
         run: "echo Deploying ..."   
 
   apply:
-    needs: [ deploy, test ]             # will work after the deploy finishes         
+    needs: [ deploy, test ]             # will work after the deploy finishes   
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: echo "Hello"      
