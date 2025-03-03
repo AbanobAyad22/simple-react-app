@@ -41,3 +41,13 @@ jobs:
     steps:
       - name: say hello
         run: echo "Hello"      
+# -------------------------------------------------------------------------------
+name: second-Workflow
+on: [push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: echo "Hello"     
+           
