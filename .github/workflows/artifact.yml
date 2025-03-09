@@ -33,12 +33,6 @@ jobs:
     needs: build # Ensures this job runs after the 'build' job
 
     steps:
-      # Step 1: Download the artifact uploaded by the 'build' job
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifact
-
       # Step 2: Deploy (example: fake deploy command)
       - name: Deploy project
         run: |
