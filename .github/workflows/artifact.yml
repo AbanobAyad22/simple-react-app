@@ -24,7 +24,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
-          path: output/ # The directory or file to upload
+          path: |
+            output/ # The directory or file to upload
+            main.jsx
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,4 +43,5 @@ jobs:
       - name: Deploy project
         run: |
           ls -l # List the downloaded artifact
+          cat main.jsx
           cat output/build.txt # Check the contents of the artifact
