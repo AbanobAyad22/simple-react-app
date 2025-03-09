@@ -1,0 +1,44 @@
+name: Example with Artifacts
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      # Step 2: Build the code (example: fake build command)
+      - name: Build project
+        run: |
+          mkdir output
+          echo "This is the build artifact" > output/build.txt
+
+      # Step 3: Upload the build output as an artifact
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: output/ # The directory or file to upload
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build # Ensures this job runs after the 'build' job
+
+    steps:
+      # Step 1: Download the artifact uploaded by the 'build' job
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+
+      # Step 2: Deploy (example: fake deploy command)
+      - name: Deploy project
+        run: |
+          ls -l # List the downloaded artifact
+          cat output/build.txt # Check the contents of the artifact
