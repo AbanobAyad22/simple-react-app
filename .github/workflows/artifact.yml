@@ -33,6 +33,7 @@ jobs:
           cd output
           touch build.txt
           echo "This is the build artifact" > build.txt
+          echo $build.txt
 
       # Step 3: Upload the build output as an artifact
       - name: Upload build artifact
