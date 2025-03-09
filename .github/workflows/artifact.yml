@@ -11,7 +11,7 @@ jobs:
     steps:
       # Step 1: Check out the repository
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step 2: Build the code (example: fake build command)
       - name: Build project
@@ -33,7 +33,7 @@ jobs:
     steps:
       # Step 1: Download the artifact uploaded by the 'build' job
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifact
 
