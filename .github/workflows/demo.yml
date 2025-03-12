@@ -26,3 +26,16 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploying..."
+      - name: download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: |
+            dist
+            package.json    
+      - name: output
+        run: | 
+          touch f1.txt
+          ls
+
+        
