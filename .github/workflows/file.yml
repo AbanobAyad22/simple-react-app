@@ -14,5 +14,4 @@ jobs:
     steps:
     - name: list
       run: |
-        touch f1
-        ls
+        echo "hello"
