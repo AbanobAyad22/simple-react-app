@@ -1,0 +1,19 @@
+name: list
+
+on:
+  push:
+    branches:
+    - main 
+
+
+jobs:
+  my_job:
+    name: list
+    runs-on: ubuntu-latest    
+
+
+    steps:
+    - name: list files
+      run: | 
+        touch file1
+        ls
