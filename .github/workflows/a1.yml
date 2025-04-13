@@ -10,6 +10,6 @@ jobs:
     steps: 
     - name: eco
       run: | 
-        ecco: "Hello"
+        echo: "Hello"
         
       
