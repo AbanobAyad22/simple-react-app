@@ -13,4 +13,6 @@ jobs:
 
     steps:
     - name: list
-      run: ls
+      run: |
+        touch f1
+        ls
