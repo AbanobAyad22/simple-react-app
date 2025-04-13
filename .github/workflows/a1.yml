@@ -1,0 +1,15 @@
+name: print ecco hello 
+on:
+  push:
+    branches:
+    - main
+jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-latest
+    steps: 
+    - name: eco
+      run: | 
+        ecco: "Hello"
+        
+      
